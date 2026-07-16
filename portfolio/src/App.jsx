@@ -43,8 +43,9 @@ function App() {
           <a href="#evidence" onClick={closeMenu}>Evidence</a>
           <a href="#research" onClick={closeMenu}>Research</a>
           <a href="#experience" onClick={closeMenu}>Experience</a>
+          <a href="/profile/skills-game.html" target="_blank" rel="noreferrer">Skills Quest</a>
           <a href={links.orcid} target="_blank" rel="noreferrer">ORCID</a>
-          <a className="nav-cta" href={links.resume} download="Jose_Yrikes_Detailed_English_CV.pdf">
+          <a className="nav-cta" href={links.resume} download="Jose_Yrikes_Detailed_English_CV.html">
             Download CV <ArrowIcon />
           </a>
         </nav>
@@ -73,7 +74,10 @@ function App() {
               <a className="button button-secondary" href={links.github} target="_blank" rel="noreferrer">
                 <GithubIcon /> GitHub
               </a>
-              <a className="button button-secondary resume-button" href={links.resume} download="Jose_Yrikes_Detailed_English_CV.pdf">
+              <a className="button button-secondary" href="/profile/skills-game.html" target="_blank" rel="noreferrer">
+                🎮 Skills Quest <ArrowIcon />
+              </a>
+              <a className="button button-secondary resume-button" href={links.resume} download="Jose_Yrikes_Detailed_English_CV.html">
                 Download detailed English CV <ArrowIcon />
               </a>
             </div>
@@ -322,7 +326,7 @@ function App() {
             <a href={links.github} target="_blank" rel="noreferrer">Review my GitHub <ExternalIcon /></a>
             <a href={links.linkedin} target="_blank" rel="noreferrer">Connect on LinkedIn <ExternalIcon /></a>
             <a href={links.orcid} target="_blank" rel="noreferrer">Open ORCID record <ExternalIcon /></a>
-            <a href={links.resume} download="Jose_Yrikes_Detailed_English_CV.pdf">Download detailed English CV (PDF) <ArrowIcon /></a>
+            <a href={links.resume} download="Jose_Yrikes_Detailed_English_CV.html">Download detailed English CV <ArrowIcon /></a>
           </div>
         </section>
       </main>
