@@ -1,5 +1,6 @@
 name: Deploy React portfolio to GitHub Pages
 
+# Manual redeploy trigger: 2026-07-16
 on:
   push:
     branches: [gh-pages]
