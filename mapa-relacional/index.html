@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<meta name="color-scheme" content="light dark">
+<title>Mapa da ansiedade e do afastamento</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="shell"><div class="card">
+<header><div class="logo">MA</div><div><h1>Mapa da ansiedade e do afastamento</h1><p>Triagem multidimensional individual e relacional</p></div></header>
+<main>
+<section id="intro" class="on">
+<span class="eyebrow">5 blocos · 85 perguntas</span>
+<h2>Entender o ciclo antes de tirar conclusões.</h2>
+<p class="lead">Este percurso investiga sofrimento atual, reconhecimento emocional, reação à ansiedade, funcionamento da relação e experiências que podem ativar medo ou afastamento.</p>
+<div class="notice"><strong>Não é diagnóstico nem terapia.</strong> O resultado apresenta hipóteses para orientar conversa ou avaliação profissional. Responda individualmente, sem consultar o parceiro.</div>
+<div class="notice"><strong>Base científica:</strong> o primeiro bloco usa a DASS-21 brasileira, de domínio público. Os demais usam perguntas autorais baseadas nos construtos da TAS-20, CPQ e RDAS-P, sem reproduzir instrumentos proprietários.</div>
+<div class="grid"><div><label class="title" for="name">Nome, iniciais ou código</label><input id="name" type="text" maxlength="80" autocomplete="off"></div><div><label class="title" for="partner">Nome ou código do parceiro</label><input id="partner" type="text" maxlength="80" autocomplete="off"></div></div>
+<label class="check"><input id="consent" type="checkbox"><span>Li as informações, aceito responder voluntariamente e compreendo que este resultado não substitui avaliação profissional.</span></label>
+<details><summary>Verificação de segurança — não entra na pontuação</summary>
+<p class="small">Marque qualquer situação atual. Em caso de risco imediato, priorize segurança e apoio presencial.</p>
+<label class="check"><input class="safety" value="medo" type="checkbox"><span>Tenho medo da reação do meu parceiro.</span></label>
+<label class="check"><input class="safety" value="violencia" type="checkbox"><span>Houve violência física, coerção sexual ou ameaça grave.</span></label>
+<label class="check"><input class="safety" value="controle" type="checkbox"><span>Há controle extremo sobre dinheiro, contatos, deslocamentos ou acesso a ajuda.</span></label>
+<label class="check"><input class="safety" value="autoagressao" type="checkbox"><span>Tenho pensado em me machucar, desaparecer ou não continuar vivo(a).</span></label>
+</details>
+<div id="resumeBox" class="notice resume"><strong>Há um preenchimento salvo neste dispositivo.</strong><div class="actions"><button id="resumeBtn" class="secondary">Continuar</button><button id="discardBtn" class="ghost">Apagar e recomeçar</button></div></div>
+<p id="introErr" class="error"></p>
+<div class="actions"><button id="sourcesBtn" class="secondary">Metodologia e fontes</button><button id="startBtn" class="primary">Começar</button></div>
+</section>
+
+<section id="quiz">
+<div id="blockSteps" class="steps"></div>
+<div class="progressrow"><div class="track"><div id="fill" class="fill"></div></div><span id="count" class="counter"></span></div>
+<span id="blockTag" class="eyebrow"></span>
+<h2 id="blockTitle"></h2><p id="blockHelp" class="lead"></p>
+<p id="qtext" class="question"></p>
+<div id="labels" class="labels"></div><div id="scale" class="scale"></div>
+<p id="qErr" class="error"></p>
+<div class="actions"><button id="backBtn" class="secondary">Voltar</button><button id="nextBtn" class="primary">Avançar</button></div>
+</section>
+
+<section id="open">
+<span class="eyebrow">Reflexões opcionais</span>
+<h2>Contexto que os números não mostram.</h2>
+<p class="lead">Pode deixar qualquer campo em branco. Essas respostas serão incluídas no código somente se você escrever nelas.</p>
+<label class="title">O que mudou entre vocês antes do afastamento?</label><textarea id="o1"></textarea>
+<label class="title">Qual sentimento é mais difícil mostrar ao parceiro?</label><textarea id="o2"></textarea>
+<label class="title">O que você teme que aconteça quando tenta se abrir?</label><textarea id="o3"></textarea>
+<label class="title">O que você mais precisa do parceiro atualmente?</label><textarea id="o4"></textarea>
+<label class="title">Há algo sobre uma perda ou crise que nunca foi conversado?</label><textarea id="o5"></textarea>
+<div class="actions"><button id="openBack" class="secondary">Voltar</button><button id="finishBtn" class="primary">Gerar mapa</button></div>
+</section>
+
+<section id="done">
+<span class="eyebrow">Mapa concluído</span><h2>Hipóteses para investigação.</h2>
+<div id="safetyAlert"></div>
+<h3>Sofrimento emocional atual — DASS-21</h3><div id="dassMetrics" class="result-grid"></div>
+<h3>Reconhecimento e bloqueio emocional</h3><div id="emotionBars" class="bars"></div>
+<h3>Reação quando a ansiedade aparece</h3><div id="commBars" class="bars"></div>
+<h3>Áreas da relação</h3><div id="relBars" class="bars"></div>
+<h3>Experiências que podem ativar o padrão</h3><div id="histBars" class="bars"></div>
+<h3>Leituras possíveis</h3><div id="hypotheses" class="hyp"></div>
+<div class="notice"><strong>Como ler:</strong> pontuação alta em sofrimento, bloqueio, busca, protesto ou afastamento indica maior presença daquele padrão. Nas áreas da relação, pontuação alta significa maior preservação.</div>
+<label class="title" for="payload">Código completo das respostas</label><textarea id="payload" readonly></textarea>
+<div class="actions"><button id="copyBtn" class="secondary">Copiar código</button><button id="shareBtn" class="primary">Compartilhar</button></div><p id="shareMsg" class="error"></p>
+<div class="actions"><button id="sourcesDone" class="secondary">Metodologia e fontes</button><button id="resetBtn" class="ghost">Apagar deste dispositivo</button></div>
+</section>
+
+<section id="sources">
+<span class="eyebrow">Transparência científica</span><h2>O que é oficial e o que é autoral.</h2>
+<div class="notice"><strong>DASS-21:</strong> itens e correção oficiais, em versão brasileira publicamente disponibilizada pelo site da DASS. Os níveis são triagem, não diagnóstico.</div>
+<div class="notice"><strong>Demais blocos:</strong> perguntas elaboradas para este projeto a partir de construtos científicos. Não são TAS-20, CPQ ou RDAS-P oficiais e não usam pontos de corte clínicos.</div>
+<ul class="refs">
+<li><a href="https://www2.psy.unsw.edu.au/dass/" target="_blank" rel="noopener">DASS-21: site oficial e domínio público</a><br>Lovibond & Lovibond; versão brasileira de Vignola e Tucci.</li><li><a href="https://doi.org/10.1016/j.jad.2013.10.031" target="_blank" rel="noopener">Validação brasileira da DASS-21</a><br>Vignola & Tucci (2014), Journal of Affective Disorders.</li><li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC5346477/" target="_blank" rel="noopener">Estrutura revisada do CPQ</a><br>Crenshaw et al. (2017), comunicação construtiva e demanda–afastamento.</li><li><a href="https://pubmed.ncbi.nlm.nih.gov/22765345/" target="_blank" rel="noopener">Validação brasileira da RDAS-P</a><br>Hernandez et al. (2012), ajustamento diádico.</li><li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9597132/" target="_blank" rel="noopener">Revisão psicométrica da TAS-20</a><br>Base conceitual sobre identificar e descrever emoções; itens não reproduzidos.</li><li><a href="https://www.phenxtoolkit.org/protocols/view/650901?origin=browse" target="_blank" rel="noopener">Permissão exigida para TAS-20</a><br>A TAS-20 é proprietária; este site usa perguntas autorais.</li>
+</ul>
+<h3>Limitações</h3><p class="lead">Autorrelato pode sofrer influência do momento, memória e desejo de apresentar determinada imagem. A comparação do casal precisa dos dois preenchimentos independentes e não decide quem está certo.</p>
+<div class="actions"><span></span><button id="sourcesBack" class="primary">Voltar</button></div>
+</section>
+</main></div></div>
+
+<script src="data.js"></script>
+<script src="script.js"></script>
+</body></html>
